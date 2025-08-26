@@ -1,0 +1,45 @@
+@use "../abstracts/mixins" as m;
+.table-container {
+  @include m.custom-scrollbar(var(--base-border), var(--primary));
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  margin: 1.5em 0;
+  border-radius: 0.25em;
+  border: 1px solid var(--base-border);
+  border-block-end: none;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 65ch;
+    background-color: var(--base-bg);
+  }
+
+  thead {
+    background-color: var(--second-bg);
+  }
+
+  th {
+    text-align: start;
+    padding: 1em 1.5em;
+    font-weight: 600;
+    color: var(--third-color);
+    border-block-end: 2px solid var(--base-border);
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 1em 1.5em;
+    border-block-end: 2px solid var(--base-border);
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+
+  tbody tr:hover {
+    background-color: var(--second-bg);
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: var(--second-bg);
+  }
+}

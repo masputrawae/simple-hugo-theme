@@ -8,8 +8,8 @@
   {{ partial "sidebar" . }}
   <main class="main">
     {{ partial "components/tab-control-desktop" . }}
-    <div class="markdown">
-      <article class="tab-pane tab-pane--is-active clearfix" id="viewPage">
+    <div class="main__content">
+      <article class="tab-pane tab-pane--is-active" id="viewPage">
         <h1>{{ .Title }}</h1>
         {{ .Content }}
         {{ partial "components/taxonomy-term" . }}
@@ -20,7 +20,6 @@
     </div>
   </main>
   {{ partial "footer" . }}
-
   <div id="linkpreview"></div>
 </body>
 </html>

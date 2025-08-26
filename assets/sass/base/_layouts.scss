@@ -116,12 +116,12 @@
       @include m.text-ellipsis();
       display: inline-flex;
       align-items: center;
-      padding: 0.20rem;
+      padding: 0.2rem;
       gap: 0.25rem;
-      color: var(--primary);
       text-align: start;
       font-size: v.$fs-sm;
       cursor: pointer;
+      text-decoration: none;
 
       &--disable {
         color: var(--third-color);
@@ -132,6 +132,18 @@
 
 .main {
   background-color: var(--base-bg);
+
+  &__content {
+    color: var(--base-color);
+    max-width: 100%;
+    font-weight: 400;
+    width: 100%;
+    overflow-x: hidden;
+    word-break: normal;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+    padding: 1em;
+  }
 }
 
 footer {
@@ -166,7 +178,7 @@ footer {
     border: none;
     transition: none;
 
-    .nav--mobile-only, 
+    .nav--mobile-only,
     &__btn-close {
       display: none;
     }
@@ -177,6 +189,10 @@ footer {
     border: 1px solid var(--base-border);
     border-inline-end: none;
     border-block-start: none;
+
+    &__content {
+      padding-inline: 3em;
+    }
   }
 
   .footer {

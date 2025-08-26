@@ -28,13 +28,11 @@ Ini caption [contoh](/callout/) atau [Contoh Artilel](/artikel-lorem/)
 
 {{< /figure >}}
 
+> Sint labore dolore pariatur consectetur velit reprehenderit duis aute aute.Mollit dolor consequat veniam nulla ea id dolore magna id velit eu labore et.
+
 Deserunt irure eu esse sunt sint cupidatat non culpa. Duis culpa aute mollit adipisicing magna eiusmod in pariatur sint excepteur ipsum commodo eiusmod mollit. Labore consequat ullamco duis ea mollit commodo est ipsum aute labore. Dolor est pariatur esse ipsum consequat dolore adipisicing occaecat cupidatat enim ea do anim pariatur. Tempor eiusmod pariatur enim sit anim aliqua dolore elit minim duis cupidatat nostrud ut.
-{{% card float="right" %}}
-Et duis cillum veniam pariatur nostrud consectetur voluptate Lorem. Id laborum pariatur dolore velit. Ea exercitation qui ex ullamco cillum consectetur quis officia sint.
 
-{{% /card %}}
-
-### Hello World
+## Hello World
 
 Pariatur excepteur sint voluptate do eiusmod do sit. Esse sit deserunt officia velit. Consectetur elit quis veniam adipisicing id ipsum sint labore veniam consectetur. Dolor in enim aute duis qui in anim labore aliquip ipsum.
 
