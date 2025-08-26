@@ -70,20 +70,6 @@ jobs:
       - name: Configure Git
         run: git config core.quotepath false
 
-      #==================== OPTIONAL
-      # - name: Generate Index.md
-      #   run: python3 index_generator.py
-      #====================
-
-      #==================== TESTING ONLY
-      - name: Generate Dummy MD 1
-        run: python3 _md_generator/article_dummy.py
-      - name: Generate Dummy MD 2
-        run: python3 _md_generator/zettel_dummy.py
-      - name: Convert Wikilink
-        run: ./wikilink-converter
-      #====================
-
       - name: Build with Hugo
         run: |
           hugo \
