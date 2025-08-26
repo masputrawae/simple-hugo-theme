@@ -3,7 +3,7 @@
 #===================
 baseURL: https://wumbojb.github.io/
 languageCode: id
-title: Testing Only
+title: My Notes
 enableGitInfo: true
 enableEmoji: true
 
@@ -16,7 +16,7 @@ services:
 privacy:
   googleAnalytics:
     disable: false
-    respectDoNotTrack: false
+    respectDoNotTrack: true
 
 #===================
 # PARAMS SETTING
@@ -53,35 +53,7 @@ params:
     dataReactionsEnabled: 1
     dataEmitMetadata: 1
     dataInputPosition: "top"
-
-  #===================
-  # FAVICONS SETTING
-  #===================
-  favicons:
-    - rel: icon
-      type: image/x-icon
-      href: assets/favicons/favicon.ico
-    - rel: apple-touch-icon
-      type: image/png
-      size: 180x180
-      href: assets/favicons/apple-touch-icon.png
-    - rel: icon
-      type: image/png
-      size: 32x32
-      href: assets/favicons/favicon-32x32.png
-    - rel: icon
-      type: image/png
-      size: 16x16
-      href: assets/favicons/favicon-16x16.png
-    - rel: icon
-      type: image/png
-      size: 192x192
-      href: assets/favicons/android-chrome-192x192.png
-    - rel: icon
-      type: image/png
-      size: 512x512
-      href: assets/favicons/android-chrome-512x512.png
-
+  
   #===================
   # MENUS SETTING
   #===================
@@ -102,6 +74,9 @@ params:
         - name: Tags
           url: tags/
           weight: 40
+        - name: Categories
+          url: categories/
+          weight: 50
 
     - label: "Social Media"
       weight: 20
@@ -130,6 +105,34 @@ params:
           url: index.xml
           targetBlank: false
           weight: 50
+
+  #===================
+  # FAVICONS SETTING
+  #===================
+  favicons:
+    - rel: icon
+      type: image/x-icon
+      href: assets/favicons/favicon.ico
+    - rel: apple-touch-icon
+      type: image/png
+      size: 180x180
+      href: assets/favicons/apple-touch-icon.png
+    - rel: icon
+      type: image/png
+      size: 32x32
+      href: assets/favicons/favicon-32x32.png
+    - rel: icon
+      type: image/png
+      size: 16x16
+      href: assets/favicons/favicon-16x16.png
+    - rel: icon
+      type: image/png
+      size: 192x192
+      href: assets/favicons/android-chrome-192x192.png
+    - rel: icon
+      type: image/png
+      size: 512x512
+      href: assets/favicons/android-chrome-512x512.png
 
 #===================
 # OUTPUT SETTING
