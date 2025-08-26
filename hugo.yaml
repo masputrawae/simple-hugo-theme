@@ -125,6 +125,10 @@ params:
           url: https://example.com/
           targetBlank: true
           weight: 50
+        - name: Feed
+          url: index.xml
+          targetBlank: false
+          weight: 50
 
 #===================
 # OUTPUT SETTING

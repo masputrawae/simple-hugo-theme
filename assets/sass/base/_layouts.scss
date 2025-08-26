@@ -68,7 +68,8 @@
     @include m.flex-justify(center, center);
     flex-direction: column;
     margin-block-end: 2rem;
-
+    text-decoration: none;
+    
     &__logo {
       width: 100px;
     }
@@ -80,19 +81,6 @@
       font-size: v.$fs-7xl;
       color: var(--second-color);
       text-shadow: var(--base-text-shadow);
-    }
-  }
-
-  .search-bar {
-    border: 1px solid var(--base-border);
-    box-shadow: var(--base-shadow);
-    border-radius: 0.25rem;
-    padding: 0.25rem 0.5rem;
-  }
-
-  .search-form {
-    &__input {
-      outline: none;
     }
   }
 
@@ -123,9 +111,14 @@
       font-size: v.$fs-sm;
       cursor: pointer;
       text-decoration: none;
+      color: var(--primary);
 
       &--disable {
         color: var(--third-color);
+      }
+
+      &:hover {
+        color: var(--primary-text-emphasis);
       }
     }
   }
@@ -144,6 +137,21 @@
     overflow-wrap: anywhere;
     hyphens: auto;
     padding: 1em;
+  }
+
+  .search-bar {
+    border: 1px solid var(--base-border);
+    box-shadow: var(--base-shadow);
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    margin-top: 2rem;
+  }
+
+  .search-form {
+    &__input {
+      outline: none;
+      width: 100%;
+    }
   }
 }
 

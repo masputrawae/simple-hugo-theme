@@ -38,15 +38,17 @@ export const searchHandler = async () => {
             .map((res) => {
               const item = res.item;
               return `
-                <a class="nav__link" href="${item.url}">
-                  ${item.title || item.id || "No Title"}
-                </a>
+                <li>
+                  <a class="nav__link" href="${item.url}">
+                    ${item.title || item.id || "No Title"}
+                  </a>
+                </li>
               `;
             })
             .join("")
-        : `<p class="nav__link nav__link--disable">
-             No results found for: "${query}"
-           </p>`;
+        : `<li>
+            <p class="nav__link nav__link--disable">No results found for: "${query}"</p>
+          </li>`;
 
       resultsPanel.hidden = false;
     };
@@ -83,8 +85,8 @@ export const searchHandler = async () => {
     console.error("Search error:", err);
     resultsPanel.hidden = false;
     resultsContainer.innerHTML = `
-      <p class="nav__link nav__link--disable">
-        Search is currently unavailable
-      </p>`;
+      <li>
+        <p class="nav__link nav__link--disable">Search is currently unavailable</p>
+      </li>`;
   }
 }

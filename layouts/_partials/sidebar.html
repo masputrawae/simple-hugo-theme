@@ -16,18 +16,6 @@
       {{ partial "components/icon" (dict "name" "x" "class" "sidebar__btn-icon") }}
     </button>
   </nav>
-  
-  <div class="search-bar" data-search="{{ "search.json" | relURL }}">
-    <label class="search-form">
-      <span class="sr-only">Search</span>
-      <input type="search" name="searchInput" id="searchInput" class="search-form__input" placeholder="Search...">
-    </label>
-  </div>
-
-  <div class="nav" id="searchContainerResults" hidden>
-    <strong class="nav__label">Results</strong>
-    <nav class="nav__list" id="results"></nav>
-  </div>
 
   {{ with site.Params.menus }}
   {{ range sort . "weight" }}
@@ -44,6 +32,7 @@
             {{ end }} 
         >{{ .name }}</a>
         {{ end }}
+        <button class="nav__link nav--mobile-only" data-tab="viewSearch">Search</button>
       </nav>
     </div>
   {{ end }}

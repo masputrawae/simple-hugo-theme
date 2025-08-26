@@ -25,10 +25,11 @@
   />
 {{- end -}}
 
-{{- partial "head/ga" . -}}
-{{- partial "head/og" . -}}
-{{- partial "head/schema" . -}}
-{{- partial "head/twitter_cards" . -}}
+{{ partial "google_analytics.html" . }}
+{{ partial "opengraph.html" . }}
+{{ partial "schema.html" . }}
+{{ partial "twitter_cards.html" . }}
+
 {{- range site.Params.favicons -}}
   <link
     rel="{{- .rel -}}"
@@ -37,8 +38,14 @@
     href="{{- .href | absURL -}}"
   />
 {{- end -}}
+
 <link rel="manifest" href="{{- "manifest.json" | absURL -}}" />
 <link rel="sitemap" type="application/xml" href="{{- "sitemap.xml" | absURL -}}"/>
+
+{{ with .OutputFormats.Get "rss" }}
+  {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+{{ end }}
+
 <meta name="robots" content="index, follow" />
 {{ partial "head/sass" . }}
 {{ partial "head/js" . }}

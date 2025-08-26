@@ -2,6 +2,7 @@
 @use "../abstracts/mixins" as m;
 @use "../abstracts/variables" as v;
 
+// TAB FOR SITE
 .tab-control {
   display: none;
 }
@@ -14,7 +15,7 @@
   }
 }
 
-@include b.min(lg) {
+@include b.min(md) {
   .tab-control {
     @include m.flex-justify(space-between, center);
     border-bottom: 1px solid var(--base-border);
@@ -47,6 +48,7 @@
       font-size: v.$fs-sm;
       text-decoration: none;
       color: var(--second-color);
+      cursor: pointer;
 
       &--is-active {
         background: var(--base-bg);
@@ -59,5 +61,54 @@
         color: var(--danger);
       }
     }
+  }
+}
+
+// TAB FOR SHORTCODES
+.tabpane {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &__label {
+    position: relative;
+    flex-shrink: 1;
+    padding: 0.5rem 1rem;
+    background-color: var(--base-border);
+    border: solid 2px var(--base-border);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom: none;
+    cursor: pointer;
+    z-index: 999;
+
+    &:first-of-type {
+      border-top-left-radius: 0.5rem;
+      border-left-width: 2px;
+    }
+    &:last-of-type {
+      border-top-right-radius: 0.5rem;
+      border-right-width: 2px;
+    }
+  }
+
+  &__panel {
+    order: 999;
+    display: none;
+    width: 100%;
+    margin-top: -2px;
+    padding: 1rem;
+    border: solid 2px var(--base-border);
+  }
+  &__input:checked + &__label {
+    background-color: var(--base-bg);
+  }
+  &__input:checked + &__label + &__panel {
+    display: flow-root;
   }
 }

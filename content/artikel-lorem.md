@@ -33,78 +33,21 @@ Ini caption [contoh](/callout/) atau [Contoh Artilel](/artikel-lorem/)
 
 ## Judul: Diagram Arsitektur Aplikasi E-Commerce
 Penjelasan: Diagram ini menunjukkan alur request dari user hingga proses penyimpanan data.
-```goat
-+-----------------------------------------------------+
-|                  Internet User                      |
-|  (Menggunakan Browser / Aplikasi Mobile)            |
-+-----------------------------------------------------+
-          | (HTTPS Request)
-          v
-+-----------------------+
-|    Load Balancer      |  # Mendistribusikan traffic
-|     (NGINX)           |
-+-----------------------+
-          |
-          | (Routing berdasarkan path)
-          +------------------+-----------------+
-          |                  |                 |
-          v                  v                 v
-+-------------------+ +----------------+ +------------------------+
-|   API Gateway     | |   API Gateway  | |     API Gateway        |
-|   (Service Auth)  | |  (Service Prod)| |   (Service Order)      |
-+-------------------+ +----------------+ +------------------------+
-          |                  |                 |
-          |                  |                 |
-          v                  v                 v
-+-------------------+ +----------------+ +------------------------+
-|   Service Auth    | |  Service Prod  | |     Service Order      |
-| [Database Users]  | | [Database Prod]| |  [Database Orders]     |
-| - Login           | | - List Produk  | | - Checkout             |
-| - Register        | | - Detail Produk| | - Payment              |
-| - Verify Token    | | - Search       | | - History              |
-+-------------------+ +----------------+ +------------------------+
-          |                  |                 |
-          |                  |                 |
-          +------------------+-----------------+
-                             |
-                             v
-                 +-----------------------+
-                 |   Message Queue       |
-                 |     (RabbitMQ)        |  # Async communication
-                 +-----------------------+
-                             |
-                             | (Message: "order_placed")
-                             v
-                 +-----------------------+
-                 |   Service Inventory   |
-                 |   [Database Inventory]|  # Update stok
-                 |   - Kurangi Stok      |
-                 |   - Update Status     |
-                 +-----------------------+
-                             |
-                             | (Message: "inventory_updated")
-                             v
-                 +-----------------------+
-                 |   Service Notification|
-                 |   - Email Konfirmasi  |  # Kirim email ke user
-                 |   - SMS Notifikasi    |
-                 +-----------------------+
-                             |
-                             | (Log Event)
-                             v
-                 +-----------------------+
-                 |   Centralized Logging |
-                 |      (ELK Stack)      |  # Monitor dan analisis log
-                 +-----------------------+
-                             |
-                             | (Cache Frequently Accessed Data)
-                             v
-                 +-----------------------+
-                 |   Redis Cache         |  # Penyimpanan cache
-                 |   - Session User      |
-                 |   - Data Produk Populer|
-                 +-----------------------+
-```
+
+{{< tabpane >}}
+{{< tab label="Tab 1" >}}
+## Hello World
+Proident est consectetur incididunt dolore eu consequat quis Lorem veniam.
+{{< /tab >}}
+{{< tab label="Tab 2" selected="true" >}}
+## Hello World
+Ea occaecat dolore enim magna.
+{{< /tab >}}
+{{< tab label="Tab 3" >}}
+## Hello World
+Quis ad tempor consectetur nulla adipisicing sit exercitation do veniam voluptate.
+{{< /tab >}}
+{{< /tabpane >}}
 
 Deserunt irure eu esse sunt sint cupidatat non culpa. Duis culpa aute mollit adipisicing magna eiusmod in pariatur sint excepteur ipsum commodo eiusmod mollit. Labore consequat ullamco duis ea mollit commodo est ipsum aute labore. Dolor est pariatur esse ipsum consequat dolore adipisicing occaecat cupidatat enim ea do anim pariatur. Tempor eiusmod pariatur enim sit anim aliqua dolore elit minim duis cupidatat nostrud ut.
 
