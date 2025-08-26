@@ -1,0 +1,10 @@
+<details>
+<summary>{{ with .Get "title" | default "No Title" }}{{ . }}{{ end }}</summary>
+<section>
+{{ with .Get "details" }}
+{{ . }}
+{{ else }}
+{{ .Inner | strings.TrimSpace | .Page.RenderString | markdownify }}
+{{ end }}
+</section>
+</details>

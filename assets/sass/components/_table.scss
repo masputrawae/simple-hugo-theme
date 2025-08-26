@@ -1,4 +1,5 @@
 @use "../abstracts/mixins" as m;
+
 .table-container {
   @include m.custom-scrollbar(var(--base-border), var(--primary));
   -webkit-overflow-scrolling: touch;

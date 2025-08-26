@@ -19,21 +19,7 @@ code:not(pre code) {
   direction: ltr;
   text-align: left;
   unicode-bidi: plaintext;
-
-  &::before,
-  & code::before {
-    font-family: v.$font-mono;
-    font-size: v.$fs-sm;
-
-    border: 1px solid var(--base-border);
-    margin-block-end: -1px;
-    color: var(--third-color);
-    background-color: var(--second-bg);
-    padding: 0.1rem 0.75rem;
-    position: absolute;
-    inset-block-end: 100%;
-    width: 100%;
-  }
+  display: flow-root;
 
   pre {
     @include m.custom-scrollbar(var(--base-border), var(--primary));
@@ -45,24 +31,25 @@ code:not(pre code) {
     overflow-x: scroll;
   }
 
-  code {
-    &::before {
-      content: attr(data-lang);
-      text-transform: capitalize;
-      position: absolute;
-      inset-block-end: 100%;
-      inset-inline-start: 0;
-    }
+  code::after {
+    content: "📑 Copy";
+    cursor: copy;
+    border: 1px solid var(--base-border);
+    padding: 0.25rem 0.75rem;
+    margin-top: 1rem;
+    display: inline-block;
+    text-align: end;
+    background-color: var(--third-bg);
+    font-size: 80%;
+    border-radius: 0.25rem;
+    position: absolute;
+    inset-inline-end: 0em;
+    inset-block-start: 0em;
+  }
 
-    &::after {
-      position: absolute;
-      inset-block-end: 100%;
-      inset-inline-end: 0;
-      font-size: 0.75rem;
-      color: var(--second-color);
-      padding: 0.3rem 0.5rem;
-      cursor: grab;
-    }
+  &.copied code::after {
+    content: "✅ Copied";
+    color: var(--success);
   }
 }
 

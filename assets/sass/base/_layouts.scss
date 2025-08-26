@@ -20,6 +20,7 @@
     font-family: v.$font-serif;
     color: var(--second-color);
     text-shadow: var(--second-text-shadow);
+    text-decoration: none;
   }
 
   &__button {
@@ -151,7 +152,7 @@ footer {
   padding-inline: 2rem;
 }
 
-@include b.min(md) {
+@include b.min(lg) {
   body {
     display: grid;
     grid-template-columns: 200px minmax(0, 1fr);

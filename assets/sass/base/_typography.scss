@@ -188,6 +188,14 @@ details {
     &::after {
       content: "[open]";
       color: var(--primary);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    &:hover {
+      &::after {
+        color: var(--primary-text-emphasis);
+      }
     }
   }
 
