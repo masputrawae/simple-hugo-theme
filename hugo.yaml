@@ -35,6 +35,7 @@ params:
   defaultToc: true
   defaultDiscussion: true
   defaultEditPage: true
+  defaultMath: false
 
   ghrepo: masputrawae/masputrawae.github.io
   branch: main
@@ -125,7 +126,7 @@ params:
           url: https://example.com/
           targetBlank: true
           weight: 50
-        - name: Feed
+        - name: Rss Feed
           url: index.xml
           targetBlank: false
           weight: 50
