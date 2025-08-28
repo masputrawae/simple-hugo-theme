@@ -9,5 +9,4 @@ exclude_dirs:
   - node_modules
   - vendor
   - .obsidian
-  - .trash
   - .github
