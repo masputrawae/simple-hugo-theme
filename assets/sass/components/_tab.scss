@@ -15,7 +15,7 @@
   }
 }
 
-@include b.min(md) {
+@include b.min(lg) {
   .tab-control {
     @include m.flex-justify(space-between, center);
     border-bottom: 1px solid var(--base-border);
